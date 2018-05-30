@@ -29,9 +29,9 @@ body {
 #encabezado-principal {
     background-color: #5b7989;
     color: white;
-    height: auto;
+    /* height: auto; */
     border-radius: 10px 10px 0px 0px;
-    padding: 1%;
+    padding: 0% 5%;
 
 
 
@@ -48,14 +48,15 @@ body {
 }
 
 #menu-principal {
+    font-size: 1.5em;
     padding: 0 3%;
-    width: 25%;
+   width: 30%;
     /*border: solid 4px black;*/
    
 
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: left;
     align-items: center;
 }
 
@@ -102,6 +103,7 @@ body {
     width: 100%;
 }
 
+/*Estilos Contenedor Secundario*/
 #contenedor-secundario {
     background-color: #d5c75f;
     border: solid 1px;
@@ -125,12 +127,49 @@ body {
 }
 
 #contenedor-secundario a img{
-    border: solid 1px;
-    box-shadow: 5px 5px 2px #82c3a6;
+    border: solid 2px;
+    box-shadow: 2px 2px #82c3a6;
     width: 100%;
     height: 90%;
+}
+
+
+
+/*Estilos Contenido Paginas Secundarias*/
+#contenido-paginas {
+    background-color: #d5c75f;
+    /* border: solid 2px blue; */
+    
+    
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+#contenido-paginas .imagenes {
+    /* border: solid 2px blue; */
+    height: auto;
+    margin: 1%;
+
+    width: 30%;
+
+   /*  display: inline-block;*/
+   text-align: center;
+
 
 }
+
+
+#contenido-paginas .imagenes img {
+
+    width: 90%;
+    
+    padding: 1%;
+
+}
+
 
 
 
@@ -142,6 +181,7 @@ footer {
     padding: 1%;
     width: 98%;
     border-radius: 0px 0px 10px 10px;
+    font-size: 2ex;
 
     display: flex;
     flex-flow: row no-wrap;
@@ -153,6 +193,7 @@ footer {
 footer img {
     height:26px;
     width: 34px;
+    border-radius: 20%;
 }
 
 .col-piepagina {
@@ -168,6 +209,35 @@ footer img {
 .col-piepagina a {
 	text-decoration: none;
 	padding: 0px 5px;
+}
+
+.titulo-pie {
+    text-decoration: underline;
+}
+
+/*Filtros y Transformaciones*/
+#imgpaisajes:hover {
+    transform: rotate(10deg)
+}
+
+#imgretratos:hover {
+    transform: translate(5px, 20px);
+
+}
+
+#contenido-paginas :first-child img {
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+}
+
+#contenido-paginas :nth-child(even) img {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+}
+
+#contenido-paginas :nth-child(3) img {
+    filter: sepia(90%);
+    -webkit-filter: sepia(90%);
 }
 
 
@@ -204,8 +274,23 @@ footer img {
         width: 80%;
     }
 
-    footer {
-        flex-flow: column nowrap;
+    #contenido-paginas {
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #contenido-paginas .imagenes {
+        width: 80%;
+        text-align: center;
+    }
+
+    #pie-pagina {
+        flex-flow: row wrap;
+    }
+
+    .col-piepagina {
+        flex: 1 1 35%;
     }
 
     .contenido-pie {
@@ -218,7 +303,17 @@ footer img {
     .titulo-pie {
         text-align: center;
         vertical-align: bottom;
-        padding: 0%;
+        padding-top: 1%;
     }
 
+}
+
+@media (max-width: 480px) {
+    #pie-pagina {
+        flex-flow: column wrap;
+    }
+
+    .col-piepagina {
+        flex: 1 1 85%;
+    }
 }
